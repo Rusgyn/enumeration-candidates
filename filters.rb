@@ -3,6 +3,8 @@
 require './candidates'
 def find(id)
     # Your code Here
+    @candidates.find { |candidate| candidate[:id] === id }
+
   end
   
   def experienced?(candidate)
