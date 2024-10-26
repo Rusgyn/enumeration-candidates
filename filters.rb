@@ -22,7 +22,7 @@ def find(id)
 
   #Helper
   def qualified(candidates)
-    
+
     qualifies = []
     
     @candidates.each do |candidate| 
@@ -35,4 +35,12 @@ def find(id)
     end
 
     qualifies
+  end
+
+  def ordered_by_qualifications(candidates)
+    @candidates.sort_by do |candidate| 
+      [candidate[:years_of_experience], candidate[:github_points]]
+    end 
+    .reverse
+
   end
