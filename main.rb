@@ -20,4 +20,13 @@ puts experienced?(@candidates[1])  # Output: FALSE
 pp find(7) # Output: The candidate id 7 hash
 pp find(100) # Output nil
 
-#pp @candidates
+### Task 3. "Qualified" candidates
+#### Takes in the collection of candidates
+#### Returns a subset of the candidates that meet the following criteria:
+  # Are experienced
+  # Have 100 or more Github points
+  # Know at least Ruby or Python
+  # Applied in the last 15 days
+  # Are over the age of 17 (18+)
+
+pp qualified_candidates(@candidates)

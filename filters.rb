@@ -14,6 +14,25 @@ def find(id)
   
   def qualified_candidates(candidates)
     # Your code Here
+    qualified(@candidates)
+
   end
   
   # More methods will go below
+
+  #Helper
+  def qualified(candidates)
+    
+    qualifies = []
+    
+    @candidates.each do |candidate| 
+    qualifies.push(candidate) if
+      candidate[:years_of_experience] != 0 &&
+      candidate[:github_points] >= 100 &&
+      candidate[:languages].include?('Ruby') || candidate[:languages].include?('Python') &&
+      candidate[:date_applied] <= 15.days.ago.to_date &&
+      candidate[:age] > 17
+    end
+
+    qualifies
+  end
